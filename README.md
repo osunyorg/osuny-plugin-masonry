@@ -1,6 +1,10 @@
-# osuny-masonry
+# Osuny Masonry
 
 ## Installation
+
+### Ajouter le submodule
+
+### Appeler le plugin
 
 Dans `config/_default/config.yaml` :
 ```yaml
@@ -8,6 +12,9 @@ theme:
   - osuny
   - osuny-masonry
 ```
+
+### Appeler les fichiers
+
 
 Dans `assets/js/main.js` : 
 
@@ -23,10 +30,8 @@ Dans `assets/sass/main.sass` :
 @import "osuny-masonry"
 ```
 
-## Style "Masonry" pour les blocs en grille
+### Utiliser le style "Masonry" pour les blocs en grille
 
 Pour appliquer une mise en forme style "masonry" : 
  - Créer un bloc de liste avec une mise en forme "grille"
  - Dans les paramètrages avancés du bloc : ajouter la classe spéciale "masonry" au bloc
-
-
