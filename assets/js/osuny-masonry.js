@@ -1,6 +1,6 @@
-window.ecosystem = window.ecosystem || {};
+window.osuny = window.osuny || {};
 
-window.ecosystem.masonry = {
+window.osuny.masonry = {
     init: function () {
         'use strict';
         this.container = document.querySelector('.block-class-masonry');
@@ -53,4 +53,4 @@ window.ecosystem.masonry = {
     }
 };
 
-window.ecosystem.masonry.init();
+window.osuny.masonry.init();
