@@ -4,6 +4,11 @@
 
 ### Ajouter le submodule
 
+```
+cd themes
+git submodule add git@github.com:osunyorg/osuny-masonry.git
+```
+
 ### Appeler le plugin
 
 Dans `config/_default/config.yaml` :
