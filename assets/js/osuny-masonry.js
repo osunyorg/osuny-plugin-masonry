@@ -3,7 +3,7 @@ window.ecosystem = window.ecosystem || {};
 window.ecosystem.masonry = {
     init: function () {
         'use strict';
-        this.container = document.querySelector('.posts--grid');
+        this.container = document.querySelector('.block-class-masonry');
         if (!this.container) {
             return;
         }
