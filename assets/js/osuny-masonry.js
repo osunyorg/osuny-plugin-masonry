@@ -1,9 +1,12 @@
 window.osuny = window.osuny || {};
 
+window.osuny.masonry = window.osuny.masonry || {};
+
 window.osuny.masonry = {
+    selectors: '.block-class-masonry',
     init: function () {
         'use strict';
-        this.container = document.querySelector('.block-class-masonry');
+        this.container = document.querySelector(this.selectors);
         if (!this.container) {
             return;
         }
@@ -53,4 +56,6 @@ window.osuny.masonry = {
     }
 };
 
-window.osuny.masonry.init();
+document.addEventListener('DOMContentLoaded', function () {
+    window.osuny.masonry.init();
+});
