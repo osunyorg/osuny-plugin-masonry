@@ -1,17 +1,17 @@
 .masonry-grid
-    display: flex !important
-    flex-direction: column !important
-    flex-wrap: wrap !important 
-
-    // Search and documente why grid gutter should be halfed ?
-    column-gap: calc(var(--grid-gutter) / 2) !important
-    overflow-x: hidden
-    &::before,
-    &::after
-        content: ""
-        flex-basis: 100%
-        width: 0
     @include media-breakpoint-up(md)
+        display: flex !important
+        flex-direction: column !important
+        flex-wrap: wrap !important 
+
+        // Search and documente why grid gutter should be halfed ?
+        column-gap: calc(var(--grid-gutter) / 2) !important
+        overflow-x: hidden
+        &::before,
+        &::after
+            content: ""
+            flex-basis: 100%
+            width: 0
         article
             width: columns(4)
             padding-bottom: $spacing-2
@@ -22,17 +22,17 @@
         &::before,
         &::after
             order: 1
-    @include media-breakpoint-up(lg)
-        article
-            &:nth-child(3n+1)
-                order: 1
-            &:nth-child(3n+2)
+        @include media-breakpoint-up(lg)
+            article
+                &:nth-child(3n+1)
+                    order: 1
+                &:nth-child(3n+2)
+                    order: 2
+                &:nth-child(3n)
+                    order: 3
+            &::before,
+            &::after
                 order: 2
-            &:nth-child(3n)
-                order: 3
-        &::before,
-        &::after
-            order: 2
     @include media-breakpoint-down(md)
         article + article
             margin-top: $spacing-3
