@@ -6,13 +6,13 @@
 
         // Search and documente why grid gutter should be halfed ?
         column-gap: calc(var(--grid-gutter) / 2) !important
-        overflow-x: hidden
+        overflow-x: hidden !important
         &::before,
         &::after
             content: ""
             flex-basis: 100%
             width: 0
-        article
+        > .masonry-grid-item
             width: columns(4)
             padding-bottom: $spacing-2
             &:nth-child(2n+1)
@@ -23,7 +23,7 @@
         &::after
             order: 1
         @include media-breakpoint-up(lg)
-            article
+            > .masonry-grid-item
                 &:nth-child(3n+1)
                     order: 1
                 &:nth-child(3n+2)
@@ -34,5 +34,5 @@
             &::after
                 order: 2
     @include media-breakpoint-down(md)
-        article + article
+        > .masonry-grid-item + .masonry-grid-item
             margin-top: $spacing-3

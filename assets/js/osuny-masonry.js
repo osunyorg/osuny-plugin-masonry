@@ -7,21 +7,28 @@ window.osuny.masonry = {
     init: function () {
         'use strict';
         this.container = document.querySelector(this.selectors);
+
         if (!this.container) {
             return;
         }
-        this.images = this.container.querySelectorAll('img');
-        this.children = this.container.querySelectorAll('article');
 
-        if (this.children.length < 4) {
+        this.images = this.container.querySelectorAll('img');
+
+        if (this.container.children.length < 4) {
             return;
-        } else {
-            this.container.classList.add('masonry-grid');
         }
 
+        this.setup();
         this.update();
         this.bind();
         this.resize();
+    },
+    setup: function () {
+        this.children = Array.prototype.slice.call(this.container.children);
+        this.container.classList.add('masonry-grid');
+        this.children.forEach(function (child) {
+            child.classList.add('masonry-grid-item');
+        });
     },
     bind: function () {
         'use strict';
@@ -31,7 +38,7 @@ window.osuny.masonry = {
     update: function () {
         'use strict';
         this.images = this.container.querySelectorAll('img');
-        this.children = this.container.querySelectorAll('article');
+        this.children = Array.prototype.slice.call(this.container.children);
 
         this.images.forEach(function (image) {
             image.addEventListener('load', this.resize.bind(this));
