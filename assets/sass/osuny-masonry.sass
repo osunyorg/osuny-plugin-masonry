@@ -2,32 +2,46 @@
     @include media-breakpoint-up(md)
         display: flex !important
         flex-direction: column !important
-        flex-wrap: wrap !important 
+        flex-wrap: wrap !important
+        grid-gap: 0 !important
 
-        // Search and documente why grid gutter should be halfed ?
-        column-gap: calc(var(--grid-gutter) / 2) !important
         overflow-x: hidden !important
+        // Because of the last gap created on windows, we have to remove gap and use margin to create space between 
+        column-gap: 0 !important
+        row-gap: var(--grid-gutter) !important
         &::before,
         &::after
             content: ""
             flex-basis: 100%
             width: 0
         > .masonry-grid-item
-            width: columns(4)
+            width: columns(6)
             padding-bottom: $spacing-2
-            &:nth-child(2n+1)
-                order: 1
-            &:nth-child(2n+2)
-                order: 2
+            &:has(img:not(.is-loaded))
+                display: none
+            img
+                object-fit: fill
+                aspect-ratio: unset
         &::before,
         &::after
             order: 1
+        @include media-breakpoint-between(md, lg)
+            > .masonry-grid-item
+                width: columns(6)
+                &:nth-child(2n+1)
+                    order: 1
+                    margin-right: var(--grid-gutter)
+                &:nth-child(2n+2)
+                    order: 2
         @include media-breakpoint-up(lg)
             > .masonry-grid-item
+                width: columns(4)
                 &:nth-child(3n+1)
                     order: 1
+                    margin-right: var(--grid-gutter)
                 &:nth-child(3n+2)
                     order: 2
+                    margin-right: var(--grid-gutter)
                 &:nth-child(3n)
                     order: 3
             &::before,
