@@ -22,6 +22,7 @@ window.osuny.masonry = {
         this.update();
         this.bind();
         this.resize();
+        setTimeout(this.resize.bind(this), 500);
     },
     setup: function () {
         this.children = Array.prototype.slice.call(this.container.children);
