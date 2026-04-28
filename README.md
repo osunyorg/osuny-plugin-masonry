@@ -40,3 +40,8 @@ Dans `assets/sass/main.sass` :
 Pour appliquer une mise en forme style "masonry" : 
  - Créer un bloc de liste avec une mise en forme "grille"
  - Dans les paramètrages avancés du bloc : ajouter la classe spéciale "masonry" au bloc
+
+
+### Exemple
+
+https://www.diapason-agence.fr/references/
